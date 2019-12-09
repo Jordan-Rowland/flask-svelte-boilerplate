@@ -17,6 +17,21 @@
 		posts = res['posts'];
 	}
 
+	let images;
+
+
+
+	/* How to pass a value to an endpoint */
+	// let sub;
+
+	// const getImages = async () => {
+		// let res = await fetch(`./images/${sub}`);
+	// 	res = await res.json();
+	// 	images = res['data'];
+	// }
+
+
+
 </script>
 
 <main>
@@ -64,4 +79,5 @@
 			max-width: none;
 		}
 	}
+
 </style>

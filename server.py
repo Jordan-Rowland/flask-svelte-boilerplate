@@ -46,5 +46,10 @@ def posts():
     )
 
 
+@app.route("/images/<subreddit>")
+def images(subreddit):
+    return jsonify(data=return_imgs(subreddit))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
