@@ -20,5 +20,29 @@ def rand():
     return jsonify(random_number=randint(0, 100))
 
 
+@app.route("/posts")
+def posts():
+    return jsonify(
+        posts=[
+            {
+                "username": "J-Sun",
+                "message": "First message!"
+            },
+            {
+                "username": "J-Sun",
+                "message": "Second message!"
+            },
+            {
+                "username": "J-Sun",
+                "message": "Third message!"
+            },
+            {
+                "username": "Dave Dawn",
+                "message": "Nuggets!"
+            },
+        ]
+    )
+
+
 if __name__ == "__main__":
     app.run(debug=True)

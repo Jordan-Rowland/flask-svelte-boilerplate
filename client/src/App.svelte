@@ -7,11 +7,41 @@
 		rand = jsonRes['random_number'];
 	};
 
+	let posts;
+
+	let vStamp = Date.now()
+
+	const getPosts = async () => {
+		let res = await fetch("./posts");
+		res = await res.json();
+		posts = res['posts'];
+	}
+
 </script>
 
 <main>
 	<h1>Your number is {rand}</h1>
 	<button on:click={getRand}>Get a random number</button>
+
+	<button on:click={getPosts}>Fetch Posts</button>
+
+	v{vStamp}
+
+	{#if posts}
+		{#each posts as post}
+		  <p>
+			  Username: {post['username']}
+		  </p>
+		  <p>
+			  Message: {post['message']}
+		  </p>
+		{/each}
+	{:else}
+		<div>
+			No posts
+		</div>
+	{/if}
+
 </main>
 
 <style>
